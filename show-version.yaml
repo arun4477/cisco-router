@@ -1,0 +1,9 @@
+- name: Show version
+  cisco.ios.ios_command:
+    commands:
+      - show version
+  register: version_output
+
+- name: Print version
+  debug:
+    var: version_output.stdout_lines
